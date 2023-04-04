@@ -5,13 +5,13 @@ jobs:
   get-num-square:
     runs-on: ubuntu-latest
     name: Returns the number square
-    step:
+    steps:
       -name: Checkout
        uses: actions/checkout@v2
-      -name: fetch num squared
+      -name: Fetch num squared
        id: get_square
-       uses: ./
+       uses: ./ #Uses an action in the root directory
        with:
         num: 11
-      -num: print the square
+      -num: Print the square
        run: echo "${{steps.get_square.outputs.num_squared }}"
